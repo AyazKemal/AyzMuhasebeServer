@@ -1,5 +1,5 @@
 ﻿using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany;
-using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany.MigrateCompanyDatabase;
+using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.MigrateCompanyDatabases;
 using AyzMuhasebeServer.Presentation.Abstraction;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,17 +13,17 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         }
         
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateCompany(CreateCompanyRequest request)
+        public async Task<IActionResult> CreateCompany(CreateCompanyCommand request)
         {
-            CreateCompanyResponse response = await _mediator.Send(request);
+            CreateCompanyCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> MigrateCompanyDatabases()
         {
-            MigrateCompanyDatabasesRequest request = new();
-            MigrateCompanyDatabasesResponse response = await _mediator.Send(request);
+            MigrateCompanyDatabasesCommand request = new();
+            MigrateCompanyDatabasesCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

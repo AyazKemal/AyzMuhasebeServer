@@ -4,6 +4,6 @@ namespace AyzMuhasebeServer.Application.Service.CompanyServices
 {
     public interface IUCAFService
     {
-        Task CreateUcafAsync(CreateUCAFRequest request);
+        Task CreateUcafAsync(CreateUCAFCommand request);
     }
 }

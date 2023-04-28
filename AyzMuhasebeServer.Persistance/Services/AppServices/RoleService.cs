@@ -19,7 +19,7 @@ namespace AyzMuhasebeServer.Persistance.Services.AppServices
             _mapper = mapper;
         }
 
-        public async Task AddAsync(CreateRoleRequest request)
+        public async Task AddAsync(CreateRoleCommand request)
         {
             AppRole role = _mapper.Map<AppRole>(request);
             role.Id=Guid.NewGuid().ToString();
