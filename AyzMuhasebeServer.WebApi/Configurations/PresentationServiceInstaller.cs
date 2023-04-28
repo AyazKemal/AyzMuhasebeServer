@@ -1,4 +1,5 @@
 ﻿using AyzMuhasebeServer.Presentation;
+using AyzMuhasebeServer.WebApi.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
@@ -8,6 +9,7 @@ namespace AyzMuhasebeServer.WebApi.Configurations
     {
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<ExceptionMiddleware>();
             services.AddControllers().AddApplicationPart(typeof(AssemblyReference).Assembly);
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
