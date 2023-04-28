@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateRole;
-using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.UpdateRole;
 using AyzMuhasebeServer.Application.Service.AppServices;
 using AyzMuhasebeServer.Domain.AppEntities.Identity;
 using Microsoft.AspNetCore.Identity;
