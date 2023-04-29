@@ -1,11 +1,15 @@
 ﻿using AyzMuhasebeServer.Application.Service.AppServices;
 using AyzMuhasebeServer.Application.Service.CompanyServices;
-using AyzMuhasebeServer.Domain.Repositories.UCAFRepositories;
 using AyzMuhasebeServer.Domain;
-using AyzMuhasebeServer.Persistance.Repositories.UCAFRepositories;
+using AyzMuhasebeServer.Domain.Repositories.AppDbContext.CompanyRepositories;
+using AyzMuhasebeServer.Domain.Repositories.CompanyDbContext.UCAFRepositories;
+using AyzMuhasebeServer.Domain.UnitOfWorks;
+using AyzMuhasebeServer.Persistance;
+using AyzMuhasebeServer.Persistance.Repositories.AppDbContext.CompanyRepositories;
+using AyzMuhasebeServer.Persistance.Repositories.CompanyDbContext.UCAFRepositories;
 using AyzMuhasebeServer.Persistance.Services.AppServices;
 using AyzMuhasebeServer.Persistance.Services.CompanyServices;
-using AyzMuhasebeServer.Persistance;
+using AyzMuhasebeServer.Persistance.UnitOfWorks;
 
 namespace AyzMuhasebeServer.WebApi.Configurations
 {
@@ -14,19 +18,37 @@ namespace AyzMuhasebeServer.WebApi.Configurations
         public void Install(IServiceCollection services, IConfiguration configuration)
         {
             #region Context UnitofWork
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ICompanyDbUnitOfWork, CompanyUnitOfWork>();
+            services.AddScoped<IAppUnitOfWork, AppUnitOfWork>();
+            services.AddScoped<ICompanyDbUnitOfWork, CompanyUnitOfWork>();
             services.AddScoped<IContextService, ContextService>();
             #endregion
 
             #region Services
-            services.AddScoped<ICompanyService, CompanyService>();
+
+            #region CompanyDbContext
             services.AddScoped<IUCAFService, UCAFService>();
+            #endregion
+
+            #region AppDbContext
+            services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IRoleService, RoleService>();
             #endregion
 
+            #endregion
+
             #region Repositories
+
+            #region CompanyDbContext
             services.AddScoped<IUCAFQueryRepository, UCAFQueryRepository>();
             services.AddScoped<IUCAFCommandRepository, UCAFCommandRepository>();
+            #endregion
+
+            #region AppDbContext
+            services.AddScoped<ICompanyCommandRepository, CompanyCommandRepository>();
+            services.AddScoped<ICompanyQueryRepository, CompanyQueryRepository>();
+            #endregion
+
             #endregion
 
         }

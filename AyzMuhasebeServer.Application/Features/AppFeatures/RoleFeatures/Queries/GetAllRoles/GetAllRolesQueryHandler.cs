@@ -16,7 +16,7 @@ namespace AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Querie
         public async Task<GetAllRolesQueryResponse> Handle(GetAllRolesQuery request, CancellationToken cancellationToken)
         {
             IList<AppRole> roles = await _roleService.GetAllRolesAsync();
-            return new ( roles );
+            return new(roles);
         }
     }
 }

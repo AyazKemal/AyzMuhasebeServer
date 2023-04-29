@@ -42,7 +42,7 @@ namespace AyzMuhasebeServer.Application.Behavior
             {
                 var errors = errorDictionary.Select(s => new ValidationFailure
                 {
-                    
+
                     PropertyName = s.Value,
                     ErrorCode = s.Key
                 });

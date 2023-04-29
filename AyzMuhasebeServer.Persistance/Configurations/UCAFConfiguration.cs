@@ -10,7 +10,7 @@ namespace AyzMuhasebeServer.Persistance.Configurations
         public void Configure(EntityTypeBuilder<UniformChartOfAccount> builder)
         {
             builder.ToTable(TableNames.UniformChartOfAccounts);
-            builder.HasKey(p=> p.Id);
+            builder.HasKey(p => p.Id);
         }
     }
 }

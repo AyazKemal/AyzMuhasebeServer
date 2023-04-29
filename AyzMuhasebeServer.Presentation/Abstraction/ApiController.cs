@@ -5,7 +5,7 @@ namespace AyzMuhasebeServer.Presentation.Abstraction
 {
     [ApiController]
     [Route("api/controller")]
-    public abstract class ApiController :ControllerBase
+    public abstract class ApiController : ControllerBase
     {
         protected readonly IMediator _mediator;
 

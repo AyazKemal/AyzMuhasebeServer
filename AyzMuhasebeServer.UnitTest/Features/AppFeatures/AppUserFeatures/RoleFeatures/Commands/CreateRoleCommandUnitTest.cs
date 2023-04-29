@@ -1,8 +1,6 @@
-﻿using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany;
-using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateRole;
+﻿using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateRole;
 using AyzMuhasebeServer.Application.Service.AppServices;
 using AyzMuhasebeServer.Domain.AppEntities.Identity;
-using AyzMuhasebeServer.Persistance.Services.AppServices;
 using Moq;
 using Shouldly;
 

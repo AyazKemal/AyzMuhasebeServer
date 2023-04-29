@@ -5,6 +5,6 @@ namespace AyzMuhasebeServer.Application.Features.CompanyFeatures.UCAFFeatures.Co
     public sealed record CreateUCAFCommand(
         string Code,
         string Name,
-        char Type ,
+        char Type,
         string CompanyId) : ICommand<CreateUCAFCommandResponse>;
 }

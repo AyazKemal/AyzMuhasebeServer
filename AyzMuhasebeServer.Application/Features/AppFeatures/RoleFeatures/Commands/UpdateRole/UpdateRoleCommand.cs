@@ -4,6 +4,6 @@ namespace AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Comman
 {
     public sealed record UpdateRoleCommand(
         string Id,
-        string Code, 
+        string Code,
         string Name) : ICommand<UpdateRoleCommandResponse>;
 }

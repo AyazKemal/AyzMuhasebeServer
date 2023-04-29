@@ -25,15 +25,15 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> GetAllRoles()
         {
-            GetAllRolesQuery request = new ();
-            GetAllRolesQueryResponse response = await _mediator.Send(request); 
+            GetAllRolesQuery request = new();
+            GetAllRolesQueryResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
         [HttpPost("[action]")]
         public async Task<IActionResult> UpdateRole(UpdateRoleCommand request)
         {
-            UpdateRoleCommandResponse response= await _mediator.Send(request); 
+            UpdateRoleCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
 
@@ -42,7 +42,7 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         {
             DeleteRoleCommand request = new(id);
 
-            DeleteRoleCommandResponse response = await _mediator.Send(request); 
+            DeleteRoleCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
         //[HttpDelete("[action]")]

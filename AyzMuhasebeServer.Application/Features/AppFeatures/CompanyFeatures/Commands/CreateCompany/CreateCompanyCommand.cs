@@ -7,5 +7,5 @@ namespace AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Com
         string ServerName,
         string DatabaseName,
         string UserId,
-        string Password) :ICommand<CreateCompanyCommandResponse>;
+        string Password) : ICommand<CreateCompanyCommandResponse>;
 }

@@ -3,7 +3,8 @@ using AyzMuhasebeServer.Application.Features.CompanyFeatures.UCAFFeatures.Comman
 using AyzMuhasebeServer.Application.Service.CompanyServices;
 using AyzMuhasebeServer.Domain;
 using AyzMuhasebeServer.Domain.CompanyEntities;
-using AyzMuhasebeServer.Domain.Repositories.UCAFRepositories;
+using AyzMuhasebeServer.Domain.Repositories.CompanyDbContext.UCAFRepositories;
+using AyzMuhasebeServer.Domain.UnitOfWorks;
 using AyzMuhasebeServer.Persistance.Context;
 
 namespace AyzMuhasebeServer.Persistance.Services.CompanyServices
@@ -13,15 +14,15 @@ namespace AyzMuhasebeServer.Persistance.Services.CompanyServices
         private readonly IUCAFCommandRepository _commandRepository;
         private readonly IUCAFQueryRepository _queryRepository;
         private readonly IContextService _contextService;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly ICompanyDbUnitOfWork _companyDbUnitOfWork;
         private readonly IMapper _mapper;
         private CompanyDbContext _context;
 
-        public UCAFService(IUCAFCommandRepository commandRepository, IContextService contextService, IUnitOfWork unitOfWork, IMapper mapper, IUCAFQueryRepository queryRepository)
+        public UCAFService(IUCAFCommandRepository commandRepository, IContextService contextService, ICompanyDbUnitOfWork companyDbUnitOfWork, IMapper mapper, IUCAFQueryRepository queryRepository)
         {
             _commandRepository = commandRepository;
             _contextService = contextService;
-            _unitOfWork = unitOfWork;
+            _companyDbUnitOfWork = companyDbUnitOfWork;
             _mapper = mapper;
             _queryRepository = queryRepository;
         }
@@ -30,7 +31,7 @@ namespace AyzMuhasebeServer.Persistance.Services.CompanyServices
         {
             _context = (CompanyDbContext)_contextService.CretaeDbContextInstance(request.CompanyId);
             _commandRepository.SetDbContextInstance(_context);
-            _unitOfWork.SetDbContextInstance(_context);
+            _companyDbUnitOfWork.SetDbContextInstance(_context);
 
             UniformChartOfAccount uniformChartOfAccount = _mapper.Map<UniformChartOfAccount>(request);
 
@@ -38,7 +39,7 @@ namespace AyzMuhasebeServer.Persistance.Services.CompanyServices
 
             await _commandRepository.AddAsync(uniformChartOfAccount, cancellationToken);
 
-            await _unitOfWork.SaveChangeAsync(cancellationToken);
+            await _companyDbUnitOfWork.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<UniformChartOfAccount> GetByCode(string code)

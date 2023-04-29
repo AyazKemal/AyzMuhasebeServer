@@ -2,7 +2,7 @@
 
 namespace AyzMuhasebeServer.Domain.AppEntities
 {
-    public sealed class Company :Entity
+    public sealed class Company : Entity
     {
         public string Name { get; set; }
         public string Address { get; set; }

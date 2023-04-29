@@ -36,7 +36,7 @@ namespace AyzMuhasebeServer.Persistance.Context
                        $"Application Intent=ReadWrite;" +
                        $"Multi Subnet Failover=False";
             }
-           
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

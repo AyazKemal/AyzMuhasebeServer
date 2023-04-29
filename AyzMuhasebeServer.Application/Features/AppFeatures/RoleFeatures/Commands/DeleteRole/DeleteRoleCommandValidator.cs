@@ -6,7 +6,7 @@ public sealed class DeleteRoleCommandValidator : AbstractValidator<DeleteRoleCom
 {
     public DeleteRoleCommandValidator()
     {
-        RuleFor(p=>p.Id).NotEmpty().WithMessage("Id bilgisi boş olamaz");
+        RuleFor(p => p.Id).NotEmpty().WithMessage("Id bilgisi boş olamaz");
         RuleFor(p => p.Id).NotNull().WithMessage("Id bilgisi boş olamaz");
     }
 }

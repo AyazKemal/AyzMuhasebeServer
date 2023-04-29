@@ -2,7 +2,7 @@
 
 namespace AyzMuhasebeServer.Domain.CompanyEntities
 {
-    public sealed class UniformChartOfAccount:Entity
+    public sealed class UniformChartOfAccount : Entity
     {
         public string Code { get; set; }
         public string Name { get; set; }

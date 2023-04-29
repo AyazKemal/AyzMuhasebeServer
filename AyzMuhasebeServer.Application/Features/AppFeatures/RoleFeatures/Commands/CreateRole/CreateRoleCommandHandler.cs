@@ -19,7 +19,7 @@ namespace AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Comman
 
             if (role != null) throw new Exception("Bu Role Daha önce Kayıt edilmiş");
 
-          
+
             await _roleService.AddAsync(request);
 
             return new();

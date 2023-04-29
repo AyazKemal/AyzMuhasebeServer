@@ -40,7 +40,7 @@ namespace AyzMuhasebeServer.Infrasturcture.Authentication
                 expires: expires,
                 signingCredentials: new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtOptions.SecretKey)), SecurityAlgorithms.HmacSha256));
 
-            string token =new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            string token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
 
             string refreshToken = Convert.ToBase64String(RandomNumberGenerator.GetBytes(32));
 

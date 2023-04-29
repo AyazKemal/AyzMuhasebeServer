@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AyzMuhasebeServer.Domain.AppEntities;
 
-public sealed class MainRoleAndRoleRelationship :Entity
+public sealed class MainRoleAndRoleRelationship : Entity
 {
     [ForeignKey("AppRole")]
     public string RoleId { get; set; }

@@ -11,7 +11,7 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         public CompaniesController(IMediator mediator) : base(mediator)
         {
         }
-        
+
         [HttpPost("[action]")]
         public async Task<IActionResult> CreateCompany(CreateCompanyCommand request, CancellationToken cancellationToken)
         {

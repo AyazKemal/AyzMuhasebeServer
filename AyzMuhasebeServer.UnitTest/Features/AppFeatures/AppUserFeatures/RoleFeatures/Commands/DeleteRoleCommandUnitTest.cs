@@ -1,5 +1,4 @@
 ﻿using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.DeleteRole;
-using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.UpdateRole;
 using AyzMuhasebeServer.Application.Service.AppServices;
 using AyzMuhasebeServer.Domain.AppEntities.Identity;
 using Moq;
