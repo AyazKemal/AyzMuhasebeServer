@@ -4,7 +4,7 @@ using AyzMuhasebeServer.Domain.AppEntities.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace AyzMuhasebeServer.Application.Features.AppFeatures.AppUserFeatures.Login
+namespace AyzMuhasebeServer.Application.Features.AppFeatures.AppUserFeatures.Commands.Login
 {
     public class LoginCommandHandler : ICommandHandler<LoginCommand, LoginCommandResponse>
     {
@@ -25,7 +25,7 @@ namespace AyzMuhasebeServer.Application.Features.AppFeatures.AppUserFeatures.Log
             var checkUser = await _userManager.CheckPasswordAsync(user, request.Password);
             if (!checkUser) throw new Exception("Şifreniz Yanlış!");
 
-            List<string> roles = new ();
+            List<string> roles = new();
 
             LoginCommandResponse response = new(
                 user.Email,

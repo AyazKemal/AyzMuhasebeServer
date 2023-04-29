@@ -5,7 +5,7 @@ namespace AyzMuhasebeServer.Application.Service.AppServices
 {
     public interface ICompanyService
     {
-        Task CreateCompany(CreateCompanyCommand request);
+        Task CreateCompany(CreateCompanyCommand request, CancellationToken cancellationToken);
         Task MigrateCompanyDatabases();
         Task<Company?> GetCompanyByName(string name);
     }

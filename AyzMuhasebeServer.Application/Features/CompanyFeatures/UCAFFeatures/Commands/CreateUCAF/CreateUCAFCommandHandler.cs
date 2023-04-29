@@ -1,5 +1,6 @@
 ﻿using AyzMuhasebeServer.Application.Messaging;
 using AyzMuhasebeServer.Application.Service.CompanyServices;
+using AyzMuhasebeServer.Domain.CompanyEntities;
 
 namespace AyzMuhasebeServer.Application.Features.CompanyFeatures.UCAFFeatures.Commands.CreateUCAF
 {
@@ -14,7 +15,11 @@ namespace AyzMuhasebeServer.Application.Features.CompanyFeatures.UCAFFeatures.Co
 
         public async Task<CreateUCAFCommandResponse> Handle(CreateUCAFCommand request, CancellationToken cancellationToken)
         {
-            await _ucafService.CreateUcafAsync(request);
+            UniformChartOfAccount ucaf = await _ucafService.GetByCode(request.Code);
+
+            if (ucaf != null) throw new Exception("Bu Hesap Planı Kodu Daha Önce Tanımlanmış");
+
+            await _ucafService.CreateUcafAsync(request, cancellationToken);
             return new();
         }
     }

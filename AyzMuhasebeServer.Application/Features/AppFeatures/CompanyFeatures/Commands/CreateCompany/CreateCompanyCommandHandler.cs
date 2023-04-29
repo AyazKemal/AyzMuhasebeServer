@@ -17,7 +17,7 @@ namespace AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Com
         {
             Company company = await _companyService.GetCompanyByName(request.Name);
             if (company != null) throw new Exception("Bu Şirket Adı Daha önce Kullanılmış");
-            await _companyService.CreateCompany(request);
+            await _companyService.CreateCompany(request, cancellationToken);
             return new();
         }
     }

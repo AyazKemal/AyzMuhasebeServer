@@ -13,9 +13,9 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         }
         
         [HttpPost("[action]")]
-        public async Task<IActionResult> CreateCompany(CreateCompanyCommand request)
+        public async Task<IActionResult> CreateCompany(CreateCompanyCommand request, CancellationToken cancellationToken)
         {
-            CreateCompanyCommandResponse response = await _mediator.Send(request);
+            CreateCompanyCommandResponse response = await _mediator.Send(request, cancellationToken);
             return Ok(response);
         }
 
@@ -26,5 +26,7 @@ namespace AyzMuhasebeServer.Presentation.Controllers
             MigrateCompanyDatabasesCommandResponse response = await _mediator.Send(request);
             return Ok(response);
         }
+
+
     }
 }

@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8A8ED55D-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{FA536E57-0A2E-4EA5-88B7-1BAA9069A712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.Application", "AyzMuhasebeServer.Application\AyzMuhasebeServer.Application.csproj", "{3248A9F3-9488-4406-9ACA-F4B732EFECC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AyzMuhasebeServer.Application", "AyzMuhasebeServer.Application\AyzMuhasebeServer.Application.csproj", "{3248A9F3-9488-4406-9ACA-F4B732EFECC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.Domain", "AyzMuhasebeServer.Domain\AyzMuhasebeServer.Domain.csproj", "{92598EAA-3387-408B-A786-2D2EBCCC954E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AyzMuhasebeServer.Domain", "AyzMuhasebeServer.Domain\AyzMuhasebeServer.Domain.csproj", "{92598EAA-3387-408B-A786-2D2EBCCC954E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.Infrasturcture", "AyzMuhasebeServer.Infrasturcture\AyzMuhasebeServer.Infrasturcture.csproj", "{5F66526F-EA20-4D2C-9763-D062912D42DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AyzMuhasebeServer.Infrasturcture", "AyzMuhasebeServer.Infrasturcture\AyzMuhasebeServer.Infrasturcture.csproj", "{5F66526F-EA20-4D2C-9763-D062912D42DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.Persistance", "AyzMuhasebeServer.Persistance\AyzMuhasebeServer.Persistance.csproj", "{6CA99BD7-F4B4-4C76-AAF9-7993EC5C3A4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AyzMuhasebeServer.Persistance", "AyzMuhasebeServer.Persistance\AyzMuhasebeServer.Persistance.csproj", "{6CA99BD7-F4B4-4C76-AAF9-7993EC5C3A4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.Presentation", "AyzMuhasebeServer.Presentation\AyzMuhasebeServer.Presentation.csproj", "{34AD9819-B536-4938-AB68-D8EE86A65406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AyzMuhasebeServer.Presentation", "AyzMuhasebeServer.Presentation\AyzMuhasebeServer.Presentation.csproj", "{34AD9819-B536-4938-AB68-D8EE86A65406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.WebApi", "AyzMuhasebeServer.WebApi\AyzMuhasebeServer.WebApi.csproj", "{E008CB7B-1201-4DAC-8AD0-394F5CB366E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AyzMuhasebeServer.WebApi", "AyzMuhasebeServer.WebApi\AyzMuhasebeServer.WebApi.csproj", "{E008CB7B-1201-4DAC-8AD0-394F5CB366E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyzMuhasebeServer.UnitTest", "AyzMuhasebeServer.UnitTest\AyzMuhasebeServer.UnitTest.csproj", "{94A880EC-D347-4308-876F-FEAF847ECDC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{E008CB7B-1201-4DAC-8AD0-394F5CB366E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E008CB7B-1201-4DAC-8AD0-394F5CB366E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E008CB7B-1201-4DAC-8AD0-394F5CB366E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A880EC-D347-4308-876F-FEAF847ECDC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A880EC-D347-4308-876F-FEAF847ECDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A880EC-D347-4308-876F-FEAF847ECDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A880EC-D347-4308-876F-FEAF847ECDC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{6CA99BD7-F4B4-4C76-AAF9-7993EC5C3A4D} = {FA536E57-0A2E-4EA5-88B7-1BAA9069A712}
 		{34AD9819-B536-4938-AB68-D8EE86A65406} = {FA536E57-0A2E-4EA5-88B7-1BAA9069A712}
 		{E008CB7B-1201-4DAC-8AD0-394F5CB366E7} = {858147CF-373B-4AF9-BD32-C67581C5E484}
+		{94A880EC-D347-4308-876F-FEAF847ECDC5} = {05ECE6FE-0CE0-4680-A5D4-00DFB627BF80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72FBF8C3-21F7-4DB3-8733-06CAE225FC40}

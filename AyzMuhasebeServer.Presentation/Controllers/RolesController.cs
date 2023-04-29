@@ -1,4 +1,5 @@
-﻿using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateRole;
+﻿using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateAllRoles;
+using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateRole;
 using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.DeleteRole;
 using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.UpdateRole;
 using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Queries.GetAllRoles;
@@ -46,5 +47,12 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         }
         //[HttpDelete("[action]")]
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> CreateAllRoles()
+        {
+            CreateAllRolesCommand request = new();
+            CreateAllRolesCommandResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
     }
 }

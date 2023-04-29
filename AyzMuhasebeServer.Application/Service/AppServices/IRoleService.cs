@@ -6,6 +6,7 @@ namespace AyzMuhasebeServer.Application.Service.AppServices
     public interface IRoleService
     {
         Task AddAsync(CreateRoleCommand request);
+        Task AddRanceAsync(IEnumerable<AppRole> roles);
         Task UpdateAsync(AppRole appRole);
         Task DeleteAsync(AppRole appRole);
         Task<IList<AppRole>> GetAllRolesAsync();
