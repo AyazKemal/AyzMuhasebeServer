@@ -5,16 +5,16 @@ using AyzMuhasebeServer.Domain.Roles;
 
 namespace AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateAllRoles;
 
-public sealed class CreateAllRolesCommandHandler : ICommandHandler<CreateAllRolesCommand, CreateAllRolesCommandResponse>
+public sealed class CreateStaticRolesHandler : ICommandHandler<CreateStaticRolesCommand, CreateStaticRolesResponse>
 {
     private readonly IRoleService _roleService;
 
-    public CreateAllRolesCommandHandler(IRoleService roleService)
+    public CreateStaticRolesHandler(IRoleService roleService)
     {
         _roleService = roleService;
     }
 
-    public async Task<CreateAllRolesCommandResponse> Handle(CreateAllRolesCommand request, CancellationToken cancellationToken)
+    public async Task<CreateStaticRolesResponse> Handle(CreateStaticRolesCommand request, CancellationToken cancellationToken)
     {
         IList<AppRole> originalRoleList = RoleList.GetStaticRoles();
         IList<AppRole> newRoleList = new List<AppRole>();

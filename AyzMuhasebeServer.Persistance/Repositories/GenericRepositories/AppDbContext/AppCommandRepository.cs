@@ -4,7 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AyzMuhasebeServer.Persistance.Repositories.GenericRepositories.AppDbContext;
 
-public class AppCommandRepository<T> : IAppCommandRepository<T> where T : Entity
+public class AppCommandRepository<T> : IAppCommandRepository<T>
+    where T : Entity
 {
     private static readonly Func<Context.AppDbContext, string, Task<T>> GetByIdCompiled = EF.CompileAsyncQuery((Context.AppDbContext context, string id) => context.Set<T>().FirstOrDefault(p => p.Id == id));
 
@@ -55,3 +56,4 @@ public class AppCommandRepository<T> : IAppCommandRepository<T> where T : Entity
         Entity.UpdateRange(entities);
     }
 }
+

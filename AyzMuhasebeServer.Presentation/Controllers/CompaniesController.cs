@@ -1,5 +1,6 @@
 ﻿using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany;
 using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.MigrateCompanyDatabases;
+using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Queries.GetAllCompany;
 using AyzMuhasebeServer.Presentation.Abstraction;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -27,6 +28,13 @@ namespace AyzMuhasebeServer.Presentation.Controllers
             return Ok(response);
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllCompany()
+        {
+            GetAllCompanyQuery request = new();
+            GetAllCompanyQueryResponse response = await _mediator.Send(request);
+            return Ok(response);
+        }
 
     }
 }

@@ -7,6 +7,7 @@ namespace AyzMuhasebeServer.Application.Service.AppServices
     {
         Task CreateCompany(CreateCompanyCommand request, CancellationToken cancellationToken);
         Task MigrateCompanyDatabases();
-        Task<Company?> GetCompanyByName(string name);
+        Task<Company?> GetCompanyByName(string name, CancellationToken cancellationToken);
+        IQueryable<Company> GetAll();
     }
 }

@@ -1,4 +1,5 @@
-﻿using AyzMuhasebeServer.Domain.AppEntities.Identity;
+﻿using AyzMuhasebeServer.Domain.AppEntities;
+using AyzMuhasebeServer.Domain.AppEntities.Identity;
 
 namespace AyzMuhasebeServer.Domain.Roles;
 
@@ -28,12 +29,30 @@ public sealed class RoleList
             title: UCAF,
             code: UCAFReadCode,
             name: UCAFReadName),
-	        #endregion
-            
+	        #endregion            
         };
 
         return appRoles;
+    }
 
+    public static List<MainRole> GetStaticMainRoles()
+    {
+        List<MainRole> mainRoles = new List<MainRole>
+        {
+            new MainRole(
+                Guid.NewGuid().ToString(),
+                "Admin",
+                true),
+            new MainRole(
+                Guid.NewGuid().ToString(),
+                "Yönetici",
+                true),
+            new MainRole(
+                Guid.NewGuid().ToString(),
+                "Kullanıcı",
+                true),
+        };
+        return mainRoles;
     }
 
     #region RoleTitleNames
@@ -50,7 +69,7 @@ public sealed class RoleList
     public static string UCAFRemoveCode = "UCAF.Remove";
     public static string UCAFRemoveName = "Hesap Planı Sil";
 
-    public static string UCAFReadCode = "UCAF.Remove";
+    public static string UCAFReadCode = "UCAF.Read";
     public static string UCAFReadName = "Hesap Planı Görüntüle";
     #endregion
 

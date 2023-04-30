@@ -45,7 +45,7 @@ public class CompanyDbQueryRepository<T> : ICompanyDbQueryRepository<T> where T 
         return await GetFirstCompiled(_context, isTracking);
     }
 
-    public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> expression, bool isTracking = true)
+    public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> expression, CancellationToken cancellationToken,  bool isTracking = true)
     {
         T entity = null;
         if (!isTracking)

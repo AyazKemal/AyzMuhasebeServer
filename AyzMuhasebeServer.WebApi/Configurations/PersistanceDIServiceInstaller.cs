@@ -2,10 +2,12 @@
 using AyzMuhasebeServer.Application.Service.CompanyServices;
 using AyzMuhasebeServer.Domain;
 using AyzMuhasebeServer.Domain.Repositories.AppDbContext.CompanyRepositories;
+using AyzMuhasebeServer.Domain.Repositories.AppDbContext.MainRoleRepositories;
 using AyzMuhasebeServer.Domain.Repositories.CompanyDbContext.UCAFRepositories;
 using AyzMuhasebeServer.Domain.UnitOfWorks;
 using AyzMuhasebeServer.Persistance;
 using AyzMuhasebeServer.Persistance.Repositories.AppDbContext.CompanyRepositories;
+using AyzMuhasebeServer.Persistance.Repositories.AppDbContext.MainRoleRepositories;
 using AyzMuhasebeServer.Persistance.Repositories.CompanyDbContext.UCAFRepositories;
 using AyzMuhasebeServer.Persistance.Services.AppServices;
 using AyzMuhasebeServer.Persistance.Services.CompanyServices;
@@ -33,6 +35,7 @@ namespace AyzMuhasebeServer.WebApi.Configurations
             #region AppDbContext
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IMainRoleService, MainRoleService>();
             #endregion
 
             #endregion
@@ -47,6 +50,8 @@ namespace AyzMuhasebeServer.WebApi.Configurations
             #region AppDbContext
             services.AddScoped<ICompanyCommandRepository, CompanyCommandRepository>();
             services.AddScoped<ICompanyQueryRepository, CompanyQueryRepository>();
+            services.AddScoped<IMainRoleCommandRepository, MainRoleCommandRepository>();
+            services.AddScoped<IMainRoleQueryRepository, MainRoleQueryRepository>();
             #endregion
 
             #endregion

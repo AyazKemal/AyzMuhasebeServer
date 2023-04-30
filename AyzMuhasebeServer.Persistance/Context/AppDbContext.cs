@@ -16,11 +16,12 @@ namespace AyzMuhasebeServer.Persistance.Context
         public DbSet<Company> Companies { get; set; }
         public DbSet<MainRole> MainRoles { get; set; }
         public DbSet<MainRoleAndRoleRelationship> MainRoleAndRoleRelationships { get; set; }
-        public DbSet<UserAndCompanyRelatationship> UserAndCompanyRelatationships { get; set; }
+        public DbSet<UserAndCompanyRelationship> UserAndCompanyRelationships { get; set; }
+        public DbSet<MainRoleAndUserRelationship> MainRoleAndUserRelationships { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            var entries = ChangeTracker.Entries<Entity>();
+            var entries = ChangeTracker.Entries<AyzMuhasebeServer.Domain.AppEntities.Abstractions.Entity>();
 
             foreach (var entry in entries)
             {

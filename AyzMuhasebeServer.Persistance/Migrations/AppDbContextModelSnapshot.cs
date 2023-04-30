@@ -207,7 +207,38 @@ namespace AyzMuhasebeServer.Persistance.Migrations
                     b.ToTable("MainRoleAndRoleRelationships");
                 });
 
-            modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.UserAndCompanyRelatationship", b =>
+            modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.MainRoleAndUserRelationship", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CompanyId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MainRoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime?>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyId");
+
+                    b.HasIndex("MainRoleId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("MainRoleAndUserRelationships");
+                });
+
+            modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.UserAndCompanyRelationship", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -230,7 +261,7 @@ namespace AyzMuhasebeServer.Persistance.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("UserAndCompanyRelatationships");
+                    b.ToTable("UserAndCompanyRelationships");
                 });
 
             modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.MainRole", b =>
@@ -257,7 +288,28 @@ namespace AyzMuhasebeServer.Persistance.Migrations
                     b.Navigation("MainRole");
                 });
 
-            modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.UserAndCompanyRelatationship", b =>
+            modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.MainRoleAndUserRelationship", b =>
+                {
+                    b.HasOne("AyzMuhasebeServer.Domain.AppEntities.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId");
+
+                    b.HasOne("AyzMuhasebeServer.Domain.AppEntities.MainRole", "MainRole")
+                        .WithMany()
+                        .HasForeignKey("MainRoleId");
+
+                    b.HasOne("AyzMuhasebeServer.Domain.AppEntities.Identity.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Company");
+
+                    b.Navigation("MainRole");
+                });
+
+            modelBuilder.Entity("AyzMuhasebeServer.Domain.AppEntities.UserAndCompanyRelationship", b =>
                 {
                     b.HasOne("AyzMuhasebeServer.Domain.AppEntities.Identity.AppUser", "AppUser")
                         .WithMany()

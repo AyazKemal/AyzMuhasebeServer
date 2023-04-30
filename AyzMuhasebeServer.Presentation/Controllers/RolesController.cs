@@ -50,8 +50,8 @@ namespace AyzMuhasebeServer.Presentation.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> CreateAllRoles()
         {
-            CreateAllRolesCommand request = new();
-            CreateAllRolesCommandResponse response = await _mediator.Send(request);
+            CreateStaticRolesCommand request = new();
+            CreateStaticRolesResponse response = await _mediator.Send(request);
             return Ok(response);
         }
     }

@@ -8,17 +8,13 @@ namespace AyzMuhasebeServer.Persistance.Repositories.GenericRepositories.AppDbCo
 public class AppQueryRepository<T> : IAppQueryRepository<T> where T : Entity
 {
     private static readonly Func<Context.AppDbContext, string, bool, Task<T>> GetByIdCompiled = EF.CompileAsyncQuery((Context.AppDbContext context, string id, bool isTracking) =>
-                isTracking == true
-                ? context.Set<T>().FirstOrDefault(p => p.Id == id)
-                : context.Set<T>().AsNoTracking().FirstOrDefault(p => p.Id == id));
+        context.Set<T>().FirstOrDefault(p => p.Id == id));
 
     private static readonly Func<Context.AppDbContext, bool, Task<T>> GetFirstCompiled = EF.CompileAsyncQuery((Context.AppDbContext context, bool isTracking) =>
-            isTracking == true
-            ? context.Set<T>().FirstOrDefault()
-            : context.Set<T>().AsNoTracking().FirstOrDefault());
+            context.Set<T>().FirstOrDefault());
 
 
-    public DbSet<T> Entity { get; set; }
+    
     private Context.AppDbContext _context;
 
     public AppQueryRepository(Context.AppDbContext context)
@@ -26,7 +22,7 @@ public class AppQueryRepository<T> : IAppQueryRepository<T> where T : Entity
         _context = context;
         Entity = _context.Set<T>();
     }
-
+    public DbSet<T> Entity { get; set; }
     public IQueryable<T> GetAll(bool isTracking = true)
     {
         var result = Entity.AsQueryable();
@@ -45,13 +41,13 @@ public class AppQueryRepository<T> : IAppQueryRepository<T> where T : Entity
         return await GetFirstCompiled(_context, isTracking);
     }
 
-    public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> expression, bool isTracking = true)
+    public async Task<T> GetFirstByExpression(Expression<Func<T, bool>> expression, CancellationToken cancellationToken, bool isTracking = true)
     {
         T entity = null;
         if(!isTracking)
-            await Entity.AsNoTracking().Where(expression).FirstOrDefaultAsync();
+            await Entity.AsNoTracking().Where(expression).FirstOrDefaultAsync(cancellationToken);
         else
-            await Entity.Where(expression).FirstOrDefaultAsync();
+            await Entity.Where(expression).FirstOrDefaultAsync(cancellationToken);
         return entity;
     }
 

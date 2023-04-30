@@ -17,7 +17,7 @@ public sealed class CreateUCAFCommandUnitTest
     [Fact]
     public async Task UCAFShouldBeNull()
     {
-        UniformChartOfAccount ucaf = await _uCAFServiceMock.Object.GetByCode("100.01.001");
+        UniformChartOfAccount ucaf = await _uCAFServiceMock.Object.GetByCode("100.01.001",default);
         ucaf.ShouldBeNull();
     }
 

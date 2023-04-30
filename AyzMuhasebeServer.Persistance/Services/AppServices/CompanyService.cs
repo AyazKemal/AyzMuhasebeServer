@@ -31,9 +31,14 @@ namespace AyzMuhasebeServer.Persistance.Services.AppServices
             await _appUnitOfWork.SaveChangesAsync(cancellationToken);
         }
 
-        public async Task<Company?> GetCompanyByName(string name)
+        public IQueryable<Company> GetAll()
         {
-            return await _companyQueryRepository.GetFirstByExpression(p => p.Name == name);
+            return _companyQueryRepository.GetAll();
+        }
+
+        public async Task<Company?> GetCompanyByName(string name, CancellationToken cancellationToken)
+        {
+            return await _companyQueryRepository.GetFirstByExpression(p => p.Name == name, cancellationToken,false);
         }
 
         public async Task MigrateCompanyDatabases()
