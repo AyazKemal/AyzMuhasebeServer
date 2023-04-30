@@ -12,7 +12,7 @@ using AyzMuhasebeServer.Persistance.Repositories.CompanyDbContext.UCAFRepositori
 using AyzMuhasebeServer.Persistance.Services.AppServices;
 using AyzMuhasebeServer.Persistance.Services.CompanyServices;
 using AyzMuhasebeServer.Persistance.UnitOfWorks;
-
+//UsingSpot
 namespace AyzMuhasebeServer.WebApi.Configurations
 {
     public class PersistanceDIServiceInstaller : IServiceInstaller
@@ -30,12 +30,14 @@ namespace AyzMuhasebeServer.WebApi.Configurations
 
             #region CompanyDbContext
             services.AddScoped<IUCAFService, UCAFService>();
+            //CompanyServiceDISpot
             #endregion
 
             #region AppDbContext
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IMainRoleService, MainRoleService>();
+            //AppServiceDISpot
             #endregion
 
             #endregion
@@ -45,6 +47,7 @@ namespace AyzMuhasebeServer.WebApi.Configurations
             #region CompanyDbContext
             services.AddScoped<IUCAFQueryRepository, UCAFQueryRepository>();
             services.AddScoped<IUCAFCommandRepository, UCAFCommandRepository>();
+            //CompanyRepositoryDISpot
             #endregion
 
             #region AppDbContext
@@ -52,6 +55,7 @@ namespace AyzMuhasebeServer.WebApi.Configurations
             services.AddScoped<ICompanyQueryRepository, CompanyQueryRepository>();
             services.AddScoped<IMainRoleCommandRepository, MainRoleCommandRepository>();
             services.AddScoped<IMainRoleQueryRepository, MainRoleQueryRepository>();
+            //AppRepositoryDISpot
             #endregion
 
             #endregion
