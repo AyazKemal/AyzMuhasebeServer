@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using AyzMuhasebeServer.Application.Features.AppFeatures.CompanyFeatures.Commands.CreateCompany;
+using AyzMuhasebeServer.Application.Features.CompanyFeatures.Commands.CreateCompany;
 using AyzMuhasebeServer.Application.Service.AppServices;
 using AyzMuhasebeServer.Domain.AppEntities;
 using AyzMuhasebeServer.Domain.Repositories.AppDbContext.CompanyRepositories;

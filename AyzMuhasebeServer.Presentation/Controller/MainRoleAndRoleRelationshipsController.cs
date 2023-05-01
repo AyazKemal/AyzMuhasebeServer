@@ -1,11 +1,11 @@
 using MediatR;
 using AyzMuhasebeServer.Presentation.Abstraction;
 using Microsoft.AspNetCore.Mvc;
-using AyzMuhasebeServer.Application.Features.MainRoleAndRoleRLFeatures.Commands.CreateMainRoleAndRoleRL;
-using AyzMuhasebeServer.Application.Features.MainRoleAndRoleRLFeatures.Queries;
 using Azure.Core;
 using System.Threading;
-using AyzMuhasebeServer.Application.Features.MainRoleAndRoleRLFeatures.Commands.RemoveByIdMainRoleAndRoleRL;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleAndRoleRLFeatures.Commands.CreateMainRoleAndRoleRL;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleAndRoleRLFeatures.Commands.RemoveByIdMainRoleAndRoleRL;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleAndRoleRLFeatures.Queries;
 
 namespace AyzMuhasebeServer.Presentation.Controller;
 

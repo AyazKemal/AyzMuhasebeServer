@@ -1,10 +1,9 @@
-﻿using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateAllRoles;
-using AyzMuhasebeServer.Application.Features.MainRoleFeatures.Commands.CreateMainRole;
-using AyzMuhasebeServer.Application.Features.MainRoleFeatures.Commands.CreateRole;
-using AyzMuhasebeServer.Application.Features.MainRoleFeatures.Commands.CreateStaticMainRoles;
-using AyzMuhasebeServer.Application.Features.MainRoleFeatures.Commands.RemoveByIdMainRole;
-using AyzMuhasebeServer.Application.Features.MainRoleFeatures.Commands.UpdateMainRole;
-using AyzMuhasebeServer.Application.Features.MainRoleFeatures.Queries.GetAllMainRole;
+﻿using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleFeatures.Commands.CreateMainRole;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleFeatures.Commands.CreateStaticMainRoles;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleFeatures.Commands.RemoveByIdMainRole;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleFeatures.Commands.UpdateMainRole;
+using AyzMuhasebeServer.Application.Features.AppFeatures.MainRoleFeatures.Queries.GetAllMainRole;
+using AyzMuhasebeServer.Application.Features.AppFeatures.RoleFeatures.Commands.CreateAllRoles;
 using AyzMuhasebeServer.Presentation.Abstraction;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
