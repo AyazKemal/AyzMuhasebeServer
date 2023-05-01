@@ -1,0 +1,10 @@
+using AyzMuhasebeServer.Domain.AppEntities;
+using AyzMuhasebeServer.Persistance.Repositories.GenericRepositories.AppDbContext;
+using AyzMuhasebeServer.Domain.Repositories.AppDbContext.MainRoleAndUserRelationshipRepositories;
+
+namespace AyzMuhasebeServer.Persistance.Repositories.AppDbContext.MainRoleAndUserRelationshipRepositories;
+
+public class MainRoleAndUserRelationshipCommandRepository : AppCommandRepository<MainRoleAndUserRelationship>, IMainRoleAndUserRelationshipCommandRepository
+{
+    public MainRoleAndUserRelationshipCommandRepository(Persistance.Context.AppDbContext context) : base(context){ }
+}
